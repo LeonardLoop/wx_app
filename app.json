@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/list/index",
+    "pages/account/index",
+    "pages/setting/index",
+    "pages/form/index",
+    "pages/customer/index",
+    "pages/mobile/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#3C8DBC",
+    "navigationBarTitleText": "小程序模板",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#3C8DBC",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/list/index",
+        "text": "待处理",
+        "iconPath": "/images/issue.png",
+        "selectedIconPath": "/images/issueHL.png"
+      },
+      {
+        "pagePath": "pages/customer/index",
+        "text": "我的客户",
+        "iconPath": "/images/other.png",
+        "selectedIconPath": "/images/otherHL.png"
+      },
+      {
+        "pagePath": "pages/setting/index",
+        "text": "设置",
+        "iconPath": "/images/setting.png",
+        "selectedIconPath": "/images/settingHL.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ],
+  "debug": false
+}

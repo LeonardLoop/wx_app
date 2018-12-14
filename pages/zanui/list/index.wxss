@@ -1,0 +1,137 @@
+.zan-cell {
+  position: relative;
+  padding: 12px 15px;
+  padding-top: 8px;
+  display: flex;
+  line-height: 1.4;
+  font-size: 14px;
+  align-items: center;
+}
+
+.zan-cell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e5e5e5;
+  border-bottom-width: 1px;
+  left: 15px;
+  right: 0;
+}
+
+.zan-cell .zan-cell__icon {
+  margin-right: 10px;
+  bottom: -4px;
+  position: relative;
+}
+
+.zan-cell .zan-cell__icon:empty {
+  display: none;
+}
+
+.zan-cell__bd {
+  flex: 1; 
+  width: 0;
+  height: auto;
+  margin-right: 10px;
+}
+
+.zan-cell__text {
+  line-height: 24px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zan-cell__desc {
+  line-height: 1.4;
+  font-size: 12px;
+  color: #666;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+
+.zan-cell__ft {
+  position: relative;
+  text-align: right;
+  color: #999;
+  font-size: 12px;
+  height: 100%;
+}
+
+.zan-cell__no-pading {
+  padding: 0;
+}
+
+.zan-cell__no-pading .zan-cell__bd_padding {
+  padding: 12px 0 12px 15px;
+}
+
+.zan-cell__no-pading .zan-cell__bd_padding .zan-form__input {
+  height: 26px;
+}
+
+.zan-cell__no-pading .zan-cell__ft_padding {
+  padding: 12px 15px 12px 0;
+}
+
+.zan-cell.last-cell::after {
+  display: none;
+}
+
+.zan-cell--access .zan-cell__ft {
+  padding-right: 13px;
+}
+
+.zan-cell--access .zan-cell__ft::after {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 1px 1px 0 0;
+  border-color: #c8c8c8;
+  border-style: solid;
+  transform: translateY(-50%) matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+}
+
+.zan-cell--switch {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.zan-cell__ft.left {
+  text-align: left;
+   flex: 1; 
+}
+
+.zan-cell__bd.left {
+  flex: none;
+}
+
+.zan-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+   word-wrap: normal; 
+}
+
+
+.zan-list__img__circle {
+  border-radius:50%;
+}
+
+.value {
+  vertical-align: middle;
+}

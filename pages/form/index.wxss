@@ -1,0 +1,15 @@
+.user-info text {
+  text-align: center;
+  display: block;
+  margin-bottom: 2vh;
+}
+
+.avatar {
+  border-radius:50%;
+  overflow:hidden;
+  display:block;
+  height:25vw;
+  width:25vw;
+  margin:0 auto;
+  margin-top: 3vh;
+}

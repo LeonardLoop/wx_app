@@ -1,0 +1,18 @@
+<view class='container'>
+  <zan-panel class='user-info'>
+    <block wx:if="{{!scopeUserInfo}}">
+      <image class="avatar" src='/images/avatar.png'></image>
+      <zan-button class='auth-btn' size='small' plain open-type="getUserInfo" type="primary" bindgetuserinfo='getUserInfo'>点击登录</zan-button>
+    </block>
+    <block wx:if="{{scopeUserInfo}}">
+      <open-data class="avatar" type="userAvatarUrl"></open-data>
+      <open-data class="nickname" type="userNickName"></open-data>
+      <text class='zan-font-16 zan-c-gray-dark'></text>
+    </block>
+  </zan-panel>
+  <zan-panel class="panel">
+    <zan-cell title="门店" value="{{store}}" left></zan-cell>
+    <zan-cell title="接待批次数" value="{{batch}}" left></zan-cell>
+    <zan-cell title="接待客户数" value="{{num}}" left></zan-cell>
+  </zan-panel>
+</view>

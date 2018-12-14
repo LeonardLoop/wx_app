@@ -1,0 +1,27 @@
+<view 
+  wx:if="{{isShow}}"
+  bindtap="cellTap"
+  class="zan-cell {{ isLastCell ? 'last-cell' : '' }} {{ isLink ? 'zan-cell--access' : '' }} ">
+
+  <view class="zan-cell__icon">
+    <slot name="icon"></slot>
+  </view>
+
+  <view class="{{'zan-cell__bd '+(left ? 'left' : '')}}}}">
+    <view wx:if="{{ title }}" class="zan-cell__text {{isBold ? 'zan-font-bold' : '' }}"> <slot name="badge"></slot>{{ title }}
+    <slot name="tag"></slot>
+    </view>
+    <view wx:if="{{ label }}" class="zan-cell__desc">{{ label }}</view>
+    <slot></slot>
+  </view>
+
+  <view catchtap="navigateTo" class="{{'zan-cell__ft ' + (left ? 'left ' : '')}} {{downArrow ? 'v' : ''}}">
+    <block wx:if="{{value}}">{{ value }}</block>
+    <block wx:elif="{{placeholder}}">
+      <view class="zan-c-gray-dark">{{ placeholder }}</view>
+    </block>
+    <block wx:else>
+      <slot name="footer"></slot>
+    </block>
+  </view>
+</view>

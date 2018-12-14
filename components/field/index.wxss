@@ -1,0 +1,6 @@
+/* components/field-group/index.wxss */
+@import '../../style/weui.wxss';
+
+.progress {
+  visibility: hidden
+}

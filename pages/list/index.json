@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "待处理",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "zan-row": "../../pages/zanui/row/index",
+    "zan-col": "../../pages/zanui/col/index",
+    "zan-cell": "../../pages/zanui/cell/index",
+    "zan-list": "../../pages/zanui/list/index",
+    "zan-panel": "../../pages/zanui/panel/index",
+    "zan-loading": "../../pages/zanui/loading/index",
+    "zan-button": "../../pages/zanui/btn/index",
+    "zan-field": "../../pages/zanui/field/index",
+    "zan-tag": "../../pages/zanui/tag/index",
+    "zan-actionsheet": "../../pages/zanui/actionsheet/index"
+  }
+}

@@ -1,0 +1,33 @@
+.user-info text {
+  text-align: center;
+  display: block;
+  margin-bottom: 2vh;
+}
+
+.avatar {
+  border-radius:50%;
+  overflow:hidden;
+  display:block;
+  height:25vw;
+  width:25vw;
+  margin:0 auto;
+  margin-top: 3vh;
+}
+
+.nickname {
+  display: block;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.auth-btn {
+  display: block;
+  text-align: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.panel {
+  margin-top: 20px;
+  display: block;
+}

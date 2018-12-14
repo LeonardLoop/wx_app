@@ -1,0 +1,19 @@
+<view class='container'>
+  <zan-panel class='user-info'>
+    <block>
+      <image class="avatar" src='{{data.face}}'></image>
+    </block>
+    <block>
+      <text class='zan-font-16 zan-c-gray-dark'>{{data.name?data.name:''}}</text>
+    </block>
+  </zan-panel>
+  <zan-panel class="panel">
+    <zan-field type="phoneInput" title="手机号码" placeholder="请输入手机号码" bindinput ="handleFieldChange" bindblur="handleFieldBlur" left></zan-field>
+  </zan-panel>
+  <!-- 按钮组件 -->
+  <zan-button-group>
+    <zan-button class="button-each" type="primary" bind:btnclick="nextStep">下一歩</zan-button>
+    <zan-button bind:btnclick="notReocrd">不建档</zan-button>
+    <zan-button type="danger" bind:btnclick="notTa">不是TA</zan-button>
+  </zan-button-group>
+</view>

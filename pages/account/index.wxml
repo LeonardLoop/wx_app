@@ -1,0 +1,26 @@
+<view class='container'>
+  <view class='header'>
+    <image src='/images/logo.png'></image>
+  </view>
+  <zan-panel class="cell-panel-demo">
+    <zan-field title="手机号" placeholder="请输入手机号码" maxlength="11" bindchange="getPhone" value="{{phone}}"></zan-field>
+    <zan-field title="验证码" placeholder="请输入短信验证码" maxlength="4" type="number" bindchange="getCode" value="{{code}}">
+      <zan-button size="mini" type="primary" catchtap="sendCode">获取验证码({{second}}s)</zan-button>
+    </zan-field>
+  </zan-panel>
+  <view class="text-tips">
+    <view>
+      <text class="zan-c-theme-color zan-font-12 info-title">注意事项：</text>
+    </view>
+    <view class="zan-c-gray-dark zan-font-12 info-desc">
+      · 手机号码为您在PC端系统分配的账号；
+    </view>
+    <view class="zan-c-gray-dark zan-font-12 info-desc">
+      · 如有疑问，请联系系统管理员admin@email.com。
+    </view>
+  </view>
+  <zan-button-group>
+    <zan-button loading="{{isBtnLoading}}" type="primary" bind:btnclick="confirm">确定</zan-button>
+    <zan-button bind:btnclick="reverse">返回</zan-button>
+  </zan-button-group>
+</view>

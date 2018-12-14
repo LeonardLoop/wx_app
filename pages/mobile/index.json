@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "客户详情",
+  "usingComponents": {
+    "custom-field": "../zanui/custom/index",
+    "zan-row": "../zanui/row/index",
+    "zan-col": "../zanui/col/index",
+    "zan-list": "../zanui/list/index",
+    "zan-loading": "../zanui/loading/index",
+    "zan-cell": "../zanui/cell/index",
+    "zan-cell-group": "../zanui/cell-group/index",
+    "zan-panel": "../zanui/panel/index",
+    "zan-noticebar": "../zanui/noticebar/index",
+    "zan-button": "../zanui/btn/index",
+    "zan-button-group": "../zanui/btn-group/index",
+    "zan-switch": "../zanui/switch/index",
+    "zan-field": "../zanui/field/index",
+    "zan-toast": "../zanui/toast/index"
+  }
+}

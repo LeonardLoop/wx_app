@@ -1,0 +1,7 @@
+.zan-cell__bt {
+  margin-top: 20px;
+  flex: 1; 
+  width: 0;
+  height: 10px;
+  margin-right: 10px;
+}

@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class='search-container'>
+    <zan-field placeholder="请输入手机号或姓名进行搜索" mode="wrapped" bind:change="inputChange" search></zan-field>
+    <zan-button loading="{{isBtnLoading}}" search>
+      <image class="search-img" src='/images/search-g.png' bindtap="searchBtn"></image>
+    </zan-button>
+  </view>
+  <zan-panel>
+    <block wx:for="{{lst}}" wx:key="id" wx:for-item="itemName">
+        <zan-list name="{{itemName.name}}" phone="{{itemName.phone}}"  motorcycle="{{itemName.motorcycle}}" imageUrl="{{itemName.face}}" is-link url="{{url}}?id={{itemName.id}}&isShow=&phone=&path=''" circle value-badge="{{itemName.chiefSaleCheckFlag}}">
+          <view slot="tag" style='float:right'>
+            <zan-tag type="primary" >{{itemName.level?itemName:'D'}}</zan-tag>
+            <zan-tag type="primary" plain>{{itemName.entryType?"再次到店":"首次到店"}}</zan-tag>
+          </view>
+        </zan-list>
+    </block>
+  </zan-panel>
+  <view class="zan-font-12 zan-c-gray zan-center" style='margin-top:10px;'>没有更多</view>
+</view>

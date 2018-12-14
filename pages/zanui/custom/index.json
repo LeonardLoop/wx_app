@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "zan-cell": "../cell/index",
+    "zan-badge": "../badge/index",
+    "zan-actionsheet": "../actionsheet/index",
+    "zan-date-picker": "../datetime-picker/index",
+    "zan-capsule": "../capsule/index"
+  }
+}

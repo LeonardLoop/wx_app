@@ -1,0 +1,10 @@
+// 对输入时间格式进行替换
+var sub = function (val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+  if (val) {
+    return val.substring(5, 16)  
+  }
+}
+module.exports.sub = sub;

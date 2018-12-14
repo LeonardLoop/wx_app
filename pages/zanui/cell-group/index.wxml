@@ -1,0 +1,16 @@
+<view class="cell-group" >
+  <view wx:if="{{collopse}}"
+  class="zan-cell zan-cell--access"
+  catchtap="titleTap"
+  >
+    <view class="zan-cell__icon"></view>
+
+    <view class="zan-cell__bd">
+      <view class="zan-cell__text"><text>{{ title }}</text></view>
+    </view>
+    <view class="{{'zan-cell__cr ' + (isSpread? 'v':'')}}">
+       
+    </view>
+  </view>
+  <slot></slot>
+</view>

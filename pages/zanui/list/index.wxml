@@ -1,0 +1,40 @@
+<wxs src="../../../utils/datetime.wxs" module="judgeDate"/>
+<wxs src="../../../utils/name.wxs" module="judgeName"/>
+<view 
+  wx:if="{{isShow}}"
+  bindtap="cellTap"
+  class="zan-cell {{ isLastCell ? 'last-cell' : '' }} {{ isLink ? 'zan-cell--access' : '' }}"
+  >
+  <view style='width:100%;display: flex;flex: 1;'>
+    <view class="zan-cell__icon">
+      <slot name="icon"></slot>
+    </view>
+
+    <view class="zan-cell__icon" wx:if="{{imageUrl}}" catchtap="previewImage">
+      <image 
+        src="{{imageUrl}}"
+        style='width: 50px; height: 50px;'
+        class='{{circle ? "zan-list__img__circle" : ""}}'
+      />
+    </view>
+
+    <view class="{{'zan-cell__bd '+(left ? 'left' : '')}}}}">
+      <view class="zan-cell__text">{{ judgeName.sub(name) }}
+        <slot name="tag"></slot>
+      </view>
+      <view wx:if="{{ time }}" class="zan-cell__desc">{{ judgeDate.sub(time) }} 到店</view>
+      <view wx:if="{{ phone }}" class="zan-cell__desc">{{ phone }}</view>
+      <view wx:if="{{ motorcycle }}" class="zan-cell__desc">{{ motorcycle }}</view>
+      <view wx:if="{{ label }}" class="zan-cell__desc">{{ label }}</view>
+      <slot></slot>
+    </view>
+  </view>
+
+  <view catchtap="navigateTo" class="{{'zan-cell__ft ' + (left ? 'left' : '')}}">
+    <zan-badge wx:if="{{valueBadge}}"></zan-badge>
+    <block wx:if="{{value}}">{{ value }}</block>
+    <block wx:else>
+      <slot name="footer"></slot>
+    </block>
+  </view>
+</view>

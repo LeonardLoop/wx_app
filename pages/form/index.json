@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "客户详情",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "custom-field": "../../components/field/index",
+    "zan-badge": "../zanui/badge/index",
+    "zan-cell": "../zanui/cell/index",
+    "zan-cell-group": "../zanui/cell-group/index",
+    "zan-panel": "../zanui/panel/index",
+    "zan-button": "../zanui/btn/index",
+    "zan-button-group": "../zanui/btn-group/index",
+    "zan-toast": "../zanui/toast/index",
+    "zan-field": "../zanui/field/index"
+  }
+}

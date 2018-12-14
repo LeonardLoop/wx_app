@@ -1,0 +1,35 @@
+<wxs src="../../utils/datetime.wxs" module="judgeDate"/>
+<view class='container'>
+  <zan-panel class='user-info'>
+    <block>
+      <image class="avatar" src='{{data.face}}'></image>
+    </block>
+    <block>
+      <text class='zan-font-16 zan-c-gray-dark'>{{data.name?data.name:''}}</text>
+    </block>
+  </zan-panel>
+  <zan-panel class="panel">
+    <zan-field title="手机号码" placeholder="请输入手机号码" value="{{ phone? phone:data.phone }}" disabled></zan-field>
+    <zan-field title="用户姓名" placeholder="请输入用户姓名" value="{{ data.name }}" bindblur="handleFieldChange1"></zan-field>
+    <custom-field type="select" title="到店类型" placeholder="请选择到店类型" bind:change="handleSelectChange1" value="{{data.entryType?'再次到店':'首次到店'}}" items="{{selectItems}}" edit/>
+    <custom-field type="select" title="客户级别" placeholder="请选择客户级别" bind:change="handleSelectChange2" value="{{data.level_id}}" items="{{selectlevel}}" edit/>
+    <custom-field type="select" title="意向车型" placeholder="请选择意向车型" bind:change="handleSelectChange3" items="{{selectmodel}}" edit/>
+    <custom-field type="select" title="意向颜色" placeholder="请选择意向颜色" bind:change="handleSelectChange4" items="{{selectcolor}}" edit/>
+    <zan-field title="车型报价" bindblur="handleFieldChange2" placeholder="请填写车型报价"></zan-field>
+    <zan-field title="接待情况" bindblur="handleFieldChange3" placeholder="请填写接待情况"></zan-field>
+    <custom-field type="select" title="接待结果" placeholder="请设置接待结果" bind:change="handleSelectChange5" items="{{selectresult}}" edit/>
+    
+    <zan-cell-group title="接待历史" placeholder="请下拉查看接待历史" collopse="true">
+      <block wx:for="{{logMessage}}" wx:key="id" wx:for-item="itemName">
+        <custom-field type="text" placeholder="可选" value="xx-xx xx:xx被xx接待" />
+      </block>
+    </zan-cell-group>
+
+  </zan-panel>
+  <zan-button-group>
+    <zan-button type="primary" class="button-each" bind:btnclick="confirm">确定</zan-button>
+    <view wx:if="{{isShow}}">
+      <zan-button type="danger" bind:btnclick="notTa">不是他</zan-button>
+    </view>
+  </zan-button-group>
+</view>

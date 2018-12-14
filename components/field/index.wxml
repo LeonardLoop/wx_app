@@ -1,0 +1,91 @@
+<view wx:if="{{isShow}}">
+<zan-cell wx:if="{{type == 'text' && edit}}"
+ title="{{title}}"
+ is-link left 
+ value="{{value}}" 
+ text-refresh="{{change}}"
+ placeholder="{{placeholder}}"/>
+ <zan-cell wx:elif="{{type == 'text'}}"
+  title="{{title}}" left 
+  value="{{value}}"  />
+ <zan-cell wx:if="{{type == 'location'}}"
+ title="{{title}}" 
+ value="{{value}}" 
+ placeholder="{{placeholder}}"
+ bindtap="getLocation" 
+ is-link left />
+<zan-cell 
+wx:if="{{type == 'select' && edit}}" 
+title="{{title}}" 
+value="{{value}}" 
+placeholder="{{placeholder}}"
+bindtap="getActionSheet"
+is-link left/>
+<zan-cell 
+wx:elif="{{type == 'select'}}" 
+title="{{title}}" 
+value="{{value}}"  left>
+</zan-cell>
+<view wx:if="{{type == 'select'}}" class="actionsheet-container">
+    <zan-actionsheet show="{{ isActionSheetShow }}" actions="{{ items }}" cancel-text="取消" cancel-with-mask="{{ true }}" bind:cancel="closeActionSheet" bind:actionclick="handleActionClick" mask-class="tiny" />
+</view>
+ <zan-cell 
+ wx:if="{{type == 'checkbox' && edit}}"
+ title="{{title}}" 
+ value="{{value}}"
+ is-link left  
+ placeholder="{{placeholder}}"
+ url="/pages/observer/index?title={{title}}&refreshFunc={{change}}&url={{url}}&acquireFunc={{acquire}}"/>
+ <zan-cell 
+  wx:elif="{{type == 'checkbox'}}"
+  title="{{title}}" 
+  value="{{value}}"
+  left
+ />
+ <zan-cell wx:if="{{type == 'tag'}}"
+ title="{{title}}" 
+ is-link="{{edit}}" 
+ placeholder="{{edit&&(!items||items.length == 0)?placeholder:''}}"
+ url="/pages/tag/index?title={{title}}&refreshFunc={{change}}&acquireFunc={{acquire}}&url={{url}}" left>
+    <view slot="footer">
+      <block wx:for="{{items}}" wx:key="id">
+          <zan-capsule color="#3C8DBC" leftText="{{item.prop}}" rightText="{{item.name}}" />
+      </block>
+    </view>
+</zan-cell>
+<zan-cell wx:if="{{type == 'datetime' && edit}}"
+title="{{title}}" 
+left is-link>
+  <zan-date-picker
+    native
+    slot="footer"
+    bindchange="dateChange"  
+    placeholder="{{placeholder}}"
+    format="{{format}}"
+     />
+</zan-cell>
+<zan-cell wx:elif="{{type == 'datetime'}}" title="{{title}}" value="{{value}}" left/>
+<block wx:if="{{type == 'img'}}">
+ <zan-cell title="{{title}}"  left/>
+    <zan-cell>
+      <view class="weui-uploader">
+          <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                  <block wx:for="{{urls}}" wx:key="item">
+                      <view class="weui-uploader__file">
+                         <zan-badge wx:if="{{edit}}"  data-index='{{index}}' bindtap="delImage">X</zan-badge>
+                          <image class="weui-uploader__img" 
+                          src="{{item.url}}" mode="aspectFill" 
+                          bindtap="previewImage" data-index='{{index}}'/>
+                          <progress class="{{item.percent > 0 ? '' : 'progress'}}" percent="{{item.percent}}" activeColor="#3C8DBC" />
+                      </view>
+                  </block>
+              </view>
+              <view wx:if="{{edit}}" class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="uploadImage"></view>
+              </view>
+          </view>
+      </view>
+    </zan-cell>
+</block>
+</view>

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "zan-cell": "../../pages/zanui/cell/index",
+    "zan-badge": "../../pages/zanui/badge/index",
+    "zan-actionsheet": "../../pages/zanui/actionsheet/index",
+    "zan-date-picker": "../../pages/zanui/datetime-picker/index",
+    "zan-capsule": "../../pages/zanui/capsule/index"
+  }
+}
